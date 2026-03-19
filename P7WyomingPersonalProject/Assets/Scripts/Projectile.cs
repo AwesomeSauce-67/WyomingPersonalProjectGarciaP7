@@ -15,4 +15,12 @@ public class MoveFoward : MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

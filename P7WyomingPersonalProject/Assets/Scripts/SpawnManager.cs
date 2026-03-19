@@ -3,16 +3,18 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    private float spawnRangeX = 20;
-    private float spawnPosZ = 20;
-    private float startDelay = 2;
+    public GameObject[] ammoPrefabs;
+    public float spawnRangeX = 20;
+    public float spawnPosZ = 20;
+    public float startDelay = 2;
     private float spawnInterval = 1.5f;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", startDelay, spawnInterval);
-       
+        InvokeRepeating("SpawnEnemy", startDelay, spawnInterval += 1.5f);
+        InvokeRepeating("SpawnAmmoPack", startDelay , spawnInterval += 8.5f);
+
     }
 
     // Update is called once per frame
@@ -25,11 +27,20 @@ public class SpawnManager : MonoBehaviour
     {
 
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),
-            0, spawnPosZ);
+             0, Random.Range(-spawnPosZ, spawnPosZ));
         int enemyIndex = Random.Range(0, enemyPrefabs.Length);
         Instantiate(enemyPrefabs[enemyIndex], spawnPos,
             enemyPrefabs[enemyIndex].transform.rotation);
 
     }
-  
+    void SpawnAmmoPack()
+    {
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 
+            0, Random.Range(-spawnPosZ, spawnPosZ));
+        int AmmoPackIndex = Random.Range(0, ammoPrefabs.Length);
+        Instantiate(ammoPrefabs[AmmoPackIndex], spawnPos,
+            ammoPrefabs[AmmoPackIndex].transform.rotation);
+
+    }
+
 }
