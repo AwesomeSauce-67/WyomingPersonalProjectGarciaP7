@@ -772,6 +772,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1780932238768921886, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+      propertyPath: timer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780932238768921886, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+      propertyPath: timeUntilHeal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4580068377987441551, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -829,17 +837,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5693885000938772376, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
   m_PrefabInstance: {fileID: 428414087}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &641776950 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1780932238768921886, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
-  m_PrefabInstance: {fileID: 428414087}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549e30c2f7c4af64b97a28d0671ed40a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthDamage
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +926,8 @@ MonoBehaviour:
   spawnRangeX: 20
   spawnPosZ: 20
   startDelay: 2
+  enemyInterval: 10
+  ammoInterval: 7.5
 --- !u!4 &1379452923
 Transform:
   m_ObjectHideFlags: 0
@@ -973,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33bd67e61e9e454ba15e53d7c1aee23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  playerScript: {fileID: 641776950}
+  playerScript: {fileID: 1780932238768921886, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
   playerPrefab: {fileID: 4580068377987441551, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
   deathUI: {fileID: 219155320}
   spawnPoint: {x: 0, y: 0.25, z: 0}

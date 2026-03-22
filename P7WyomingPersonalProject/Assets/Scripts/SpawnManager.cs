@@ -7,13 +7,14 @@ public class SpawnManager : MonoBehaviour
     public float spawnRangeX = 20;
     public float spawnPosZ = 20;
     public float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    public float enemyInterval = 10.0f;
+    public float ammoInterval = 7.5f;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", startDelay, spawnInterval += 1.5f);
-        InvokeRepeating("SpawnAmmoPack", startDelay , spawnInterval += 8.5f);
+        InvokeRepeating("SpawnEnemy", startDelay,enemyInterval);
+        InvokeRepeating("SpawnAmmoPack", startDelay , ammoInterval);
 
     }
 

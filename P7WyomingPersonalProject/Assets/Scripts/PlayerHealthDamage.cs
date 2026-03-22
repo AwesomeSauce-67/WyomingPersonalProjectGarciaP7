@@ -10,8 +10,7 @@ public class PlayerHealthDamage : MonoBehaviour
 
     public bool deathStatus = false;
 
-    public float timer = 5.0f;
-    public int seconds;
+    public float timer;
 
     public float timeUntilHeal;
 
@@ -22,7 +21,6 @@ public class PlayerHealthDamage : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        seconds = (int)timer;
 
         if (health <= 0)
         {
@@ -33,16 +31,16 @@ public class PlayerHealthDamage : MonoBehaviour
        
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && seconds <= 5)
+        if (other.CompareTag("Enemy") && timer >= 5)
         {
-            seconds = 0;
+            timer = 0;
+           
         }
     }
     void PassiveHeal()
     {
-        if (health < maxHealth && seconds >= 5)
+        if (health < maxHealth && timer >= 5)
         {
-            timer = 0;
             health += 5.0f;
         }
         

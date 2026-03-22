@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2513436082074884281}
   - component: {fileID: 6251762815848839434}
   - component: {fileID: 5495331040517092246}
+  - component: {fileID: 952063554243480719}
+  - component: {fileID: 1780975420821170001}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -125,5 +127,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f8b16303bd688409a3f0c33ff1b174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetectCollision
-  health: 50
+  enemyHealth: 50
   damage: 5
+  playerScript: {fileID: 0}
+--- !u!114 &952063554243480719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075157171582784906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e5fc9493e801e4fb7702bbdbdc0b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
+  player: {fileID: 5693885000938772376, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+  moveSpeed: 3
+  detectionRange: 10
+  stopDistance: 0
+--- !u!54 &1780975420821170001
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075157171582784906}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
