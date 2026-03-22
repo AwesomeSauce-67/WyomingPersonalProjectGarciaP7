@@ -10,17 +10,18 @@ public class PlayerControl : MonoBehaviour
     public GameObject critProjectilePrefab;
     public Transform projectileSpawnPoint;
     public float ammo = 50.0f;
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+ horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
         verticalInput = Input.GetAxis("Vertical");
@@ -38,6 +39,6 @@ public class PlayerControl : MonoBehaviour
             Instantiate(critProjectilePrefab, projectileSpawnPoint.position, spawnRot);
             ammo -= 10;
         }
-
     }
+      
 }

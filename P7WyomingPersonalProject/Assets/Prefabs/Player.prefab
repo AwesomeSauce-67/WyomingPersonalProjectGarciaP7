@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4132810284321580583}
   - component: {fileID: 3334963669661987689}
   - component: {fileID: 2969904083013698456}
+  - component: {fileID: 1780932238768921886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,6 +165,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1780932238768921886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580068377987441551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 549e30c2f7c4af64b97a28d0671ed40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthDamage
+  health: 100
+  maxHealth: 100
+  healAmount: 5
+  healInterval: 1
+  deathStatus: 0
+  timer: 5
+  seconds: 0
+  timeUntilHeal: 0
 --- !u!1 &5943328271367410383
 GameObject:
   m_ObjectHideFlags: 0

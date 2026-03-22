@@ -2,18 +2,23 @@ using UnityEngine;
 
 public class EnemyDetectCollision : MonoBehaviour
 {
-    public float health = 50.0f;
+    public float enemyHealth = 50.0f;
     public float damage = 5.0f;
+    public PlayerHealthDamage playerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            playerScript = playerObj.GetComponent<PlayerHealthDamage>();
+        }
     }
 
     void Update()
     {
-        if (health <= 0.0f)
+        if (enemyHealth <= 0.0f)
         {
             Destroy(gameObject);
         }
@@ -23,11 +28,15 @@ public class EnemyDetectCollision : MonoBehaviour
     {
         if (other.CompareTag("Projectile"))
         {
-           health -= damage;
+           enemyHealth -= damage;
         }
         if (other.CompareTag("Projectile2"))
         {
-                health -= damage * 5f;
+           enemyHealth -= damage * 5f;
+        }
+        if (other.CompareTag("Player"))
+        {
+            playerScript.health -= 5.0f;
         }
     }
 }
