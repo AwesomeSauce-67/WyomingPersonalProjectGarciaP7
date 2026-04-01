@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7670573146981020665}
   - component: {fileID: 7740439522929035230}
   - component: {fileID: 4132810284321580583}
-  - component: {fileID: 3334963669661987689}
   - component: {fileID: 2969904083013698456}
+  - component: {fileID: 3334963669661987689}
   - component: {fileID: 1780932238768921886}
   m_Layer: 0
   m_Name: Player
@@ -119,25 +119,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3334963669661987689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4580068377987441551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e58f69a1488d204384808f0ce5823ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerControl
-  horizontalInput: 0
-  verticalInput: 0
-  speed: 10
-  projectilePrefab: {fileID: 7188969763403951250, guid: 933bfb25a2b90194c858e5e62d2e8ac7, type: 3}
-  critProjectilePrefab: {fileID: 7188969763403951250, guid: 3c9c0d3fbfe9d954c9e8701d8a7a65f1, type: 3}
-  projectileSpawnPoint: {fileID: 5621616054888147743}
-  ammo: 50
 --- !u!54 &2969904083013698456
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,6 +146,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3334963669661987689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580068377987441551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e58f69a1488d204384808f0ce5823ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControl
+  horizontalInput: 0
+  verticalInput: 0
+  speed: 10
+  gravityModifier: 0
+  projectilePrefab: {fileID: 7188969763403951250, guid: 933bfb25a2b90194c858e5e62d2e8ac7, type: 3}
+  critProjectilePrefab: {fileID: 7188969763403951250, guid: 3c9c0d3fbfe9d954c9e8701d8a7a65f1, type: 3}
+  projectileSpawnPoint: {fileID: 5621616054888147743}
+  ammo: 50
+  grounded: 0
+  jumpForce: 10
 --- !u!114 &1780932238768921886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +186,6 @@ MonoBehaviour:
   healInterval: 1
   deathStatus: 0
   timer: 5
-  seconds: 0
   timeUntilHeal: 0
 --- !u!1 &5943328271367410383
 GameObject:

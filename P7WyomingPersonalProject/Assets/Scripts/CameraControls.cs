@@ -44,7 +44,7 @@ public class CameraControls : MonoBehaviour
         Vector3 targetPosition = player.position + (rotation * offset);
 
         
-        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed);
+        transform.position = targetPosition;
 
        
         Vector3 focusPoint = player.position + Vector3.up * verticalFocusOffset;
