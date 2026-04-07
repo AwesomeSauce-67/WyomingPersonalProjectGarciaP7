@@ -55,6 +55,11 @@ public class PlayerControl : MonoBehaviour
             Instantiate(critProjectilePrefab, projectileSpawnPoint.position, spawnRot);
             ammo -= 10;
         }
+        if(startUp && Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)
+            || Input.GetMouseButtonDown(2)|| Input.GetMouseButtonDown(3)|| Input.GetMouseButtonDown(4))
+        {
+            startUp = false;
+        }
     }
     void FixedUpdate()
     {

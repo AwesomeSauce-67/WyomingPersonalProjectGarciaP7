@@ -10,15 +10,28 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.rotation = Quaternion.Euler(0,
+            transform.rotation.eulerAngles.y, 0);
+
         if (player == null)
         {
-            player = GameObject.FindWithTag("Player").transform;
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
+            else
+            {
+                Debug.LogError("ENEMY ERROR: I can't find anything tagged 'Player'!");
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player == null) return;
+      
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance < detectionRange && distance > stopDistance)
