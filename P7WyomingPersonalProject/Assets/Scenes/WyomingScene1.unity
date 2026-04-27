@@ -885,6 +885,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1468712931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5936645224660939280, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+  m_PrefabInstance: {fileID: 1253791664166042768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1468712935
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468712931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9842023
+  m_Direction: 1
+  m_Center: {x: -0, y: 0.29576558, z: -0}
 --- !u!1001 &1253791664166042768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -904,6 +932,10 @@ PrefabInstance:
     - target: {fileID: 5936645224660939280, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523766829950329774, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+      propertyPath: timeUntilHeal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936887996403853147, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -961,10 +993,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.52
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5404329639142947929, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5936645224660939280, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1468712935}
     - targetCorrespondingSourceObject: {fileID: 7206875842200897770, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

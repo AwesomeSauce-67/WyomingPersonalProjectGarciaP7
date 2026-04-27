@@ -2,43 +2,35 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player;
-    public float moveSpeed = 3.0f;
-    public float detectionRange = 10.0f;
-    public float stopDistance = 1.5f;
-
+    public float speed;
+    private Rigidbody enemyRb;
+    private GameObject player;
+    public PlayerHealthDamage playerHealthDamage;
+    public float damage=10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.rotation = Quaternion.Euler(0,
-            transform.rotation.eulerAngles.y, 0);
-
-        if (player == null)
-        {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-            }
-            else
-            {
-                Debug.LogError("ENEMY ERROR: I can't find anything tagged 'Player'!");
-            }
-        }
+        enemyRb = GetComponent<Rigidbody>();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player == null) return;
-      
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance < detectionRange && distance > stopDistance)
+        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        enemyRb.AddForce(lookDirection * speed);
+        if (transform.position.y < -2)
         {
-            transform.LookAt(player);
-            transform.position = Vector3.MoveTowards(transform.position, player.position,
-                moveSpeed * Time.deltaTime);
+            Destroy(gameObject);
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealthDamage phd = collision.gameObject.GetComponent<PlayerHealthDamage> ();
+            phd.health -= damage;
         }
     }
 }

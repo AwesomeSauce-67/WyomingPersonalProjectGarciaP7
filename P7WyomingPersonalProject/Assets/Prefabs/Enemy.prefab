@@ -107,10 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e5fc9493e801e4fb7702bbdbdc0b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  player: {fileID: 7132813207428963882, guid: 6738caa5ac2921943866f51e24b6ad5e, type: 3}
-  moveSpeed: 3
-  detectionRange: 100
-  stopDistance: 1.5
+  speed: 5
 --- !u!114 &6838580477267823732
 MonoBehaviour:
   m_ObjectHideFlags: 0

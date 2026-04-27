@@ -16,7 +16,7 @@ public class PlayerHealthDamage : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("PassiveHeal", 0.0f, timeUntilHeal);
+        StartCoroutine(HealOverTime());
     }
     void Update()
     {
@@ -37,15 +37,21 @@ public class PlayerHealthDamage : MonoBehaviour
            
         }
     }
-    void PassiveHeal()
+    IEnumerator HealOverTime()
+{
+    while (true)
     {
-        if (health < maxHealth && timer >= 5)
-        {
-            health += 5.0f;
-        }
+   
+        yield return new WaitForSeconds(timeUntilHeal);
+
         
+        if (health < maxHealth && timer >= 5) 
+        {
+            health += healAmount;
+  
+            health = Mathf.Min(health, maxHealth);
+            Debug.Log("Healed! Current Health: " + health);
+        }
     }
-   
-   
-       
+}
 } 

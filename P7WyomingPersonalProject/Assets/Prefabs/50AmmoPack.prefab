@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoPack
   ammoRefill: 50
-  playerControl: {fileID: 3334963669661987689, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+  playerControl: {fileID: 0}
 --- !u!1 &6875280997812110879
 GameObject:
   m_ObjectHideFlags: 0
