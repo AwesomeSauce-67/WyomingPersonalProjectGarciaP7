@@ -17,11 +17,11 @@ public class AmmoPack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerControl pc = other.GetComponent<PlayerControl>();
-            Debug.Log("urmom");
              pc.ammo += ammoRefill;
              Destroy(gameObject);
-            
-          
+            Debug.Log("CurrentAmmo: " + pc.ammo );
+
+
         }
     }
 }

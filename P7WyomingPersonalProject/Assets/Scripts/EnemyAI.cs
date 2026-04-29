@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
         {
             PlayerHealthDamage phd = collision.gameObject.GetComponent<PlayerHealthDamage> ();
             phd.health -= damage;
+            Debug.Log("CurrentHealth: " + phd.health);
         }
     }
 }
