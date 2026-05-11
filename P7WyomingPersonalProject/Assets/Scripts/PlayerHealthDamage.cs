@@ -50,7 +50,7 @@ public class PlayerHealthDamage : MonoBehaviour
             health += healAmount;
   
             health = Mathf.Min(health, maxHealth);
-            Debug.Log("Healed! Current Health: " + health);
+            Debug.Log("CurrentHealth: " + health);
         }
     }
 }
