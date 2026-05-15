@@ -51,7 +51,7 @@ public class CameraControls : MonoBehaviour
         transform.LookAt(focusPoint);
     }
 
-    void ToggleCursor(bool isLocked)
+    public void ToggleCursor(bool isLocked)
     {
         Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !isLocked;

@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
 
     }
     void SpawnEnemy()
-    {
+    {s
 
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),
              5, Random.Range(-spawnPosZ, spawnPosZ));

@@ -14,6 +14,8 @@ public class PlayerHealthDamage : MonoBehaviour
 
     public float timeUntilHeal;
 
+
+
     void Start()
     {
         StartCoroutine(HealOverTime());
@@ -22,11 +24,6 @@ public class PlayerHealthDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (health <= 0)
-        {
-            deathStatus = true;
-            Destroy(gameObject);
-        }
     }
        
     public void OnTriggerEnter(Collider other)
@@ -54,4 +51,7 @@ public class PlayerHealthDamage : MonoBehaviour
         }
     }
 }
+
+   
+
 } 
