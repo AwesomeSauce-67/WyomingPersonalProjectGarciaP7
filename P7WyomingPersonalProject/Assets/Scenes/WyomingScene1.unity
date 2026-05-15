@@ -927,14 +927,14 @@ MonoBehaviour:
   - {fileID: 2238736507483619678, guid: 92260bf2f63c06d46b3fa73e1e860e4b, type: 3}
   - {fileID: 2238736507483619678, guid: 92260bf2f63c06d46b3fa73e1e860e4b, type: 3}
   ammoPrefabs:
-  - {fileID: 9118832370881674913, guid: cdf04afeda9aa9348b27f042da8aa638, type: 3}
-  - {fileID: 7648792869726492919, guid: 5f5ebbcfe1731c3488671cda415a3ab7, type: 3}
-  - {fileID: 6330224951357211440, guid: 085255e5e1f050244a553b0469c9befc, type: 3}
-  spawnRangeX: 20
-  spawnPosZ: 20
+  - {fileID: 3683153989152510269, guid: b2337e951805e314c94af40de4f62942, type: 3}
+  - {fileID: 2979814156260889339, guid: a4c939bc54ba01240b0bc528d63f7891, type: 3}
+  - {fileID: 8940550338517686200, guid: 4762c397573a3044ca234dd45b97c52d, type: 3}
+  spawnRangeX: 100
+  spawnPosZ: 100
   startDelay: 2
-  enemyInterval: 10
-  ammoInterval: 7.5
+  enemyInterval: 5
+  ammoInterval: 2.5
 --- !u!4 &1379452923
 Transform:
   m_ObjectHideFlags: 0
