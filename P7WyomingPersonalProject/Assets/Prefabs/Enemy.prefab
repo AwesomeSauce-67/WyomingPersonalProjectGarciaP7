@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   speed: 5
+  playerHealthDamage: {fileID: 6523766829950329774, guid: 762653394a2d0204f80d2a991fa46a2f, type: 3}
+  damage: 10
 --- !u!114 &6838580477267823732
 MonoBehaviour:
   m_ObjectHideFlags: 0

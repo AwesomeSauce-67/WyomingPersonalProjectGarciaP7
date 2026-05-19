@@ -12,6 +12,7 @@ public class CameraControls : MonoBehaviour
     private float pitch = 0f;
     private float yaw = 0f;
 
+    public GameManager gM;
     void Start()
     {
         ToggleCursor(true);
@@ -22,7 +23,7 @@ public class CameraControls : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame) ToggleCursor(false);
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || gM.dead) ToggleCursor(false);
         if (Mouse.current.leftButton.wasPressedThisFrame && Cursor.lockState != CursorLockMode.Locked) ToggleCursor(true);
     }
 

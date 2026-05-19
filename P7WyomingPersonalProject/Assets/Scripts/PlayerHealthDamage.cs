@@ -14,6 +14,7 @@ public class PlayerHealthDamage : MonoBehaviour
 
     public float timeUntilHeal;
 
+    public UIHealthBar healthBar;
 
 
     void Start()
@@ -30,8 +31,19 @@ public class PlayerHealthDamage : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && timer >= 5)
         {
+            EnemyAI hitEnemy = other.GetComponent<EnemyAI>();
+
+            if (hitEnemy != null )
+            {
+                health = Mathf.Max(0, health - 10f);
+            }
             timer = 0;
-           
+
+            if (healthBar != null)
+            {
+                healthBar.UpdateHealthDisplay(health, maxHealth);
+            }
+
         }
     }
     IEnumerator HealOverTime()
@@ -49,7 +61,12 @@ public class PlayerHealthDamage : MonoBehaviour
             health = Mathf.Min(health, maxHealth);
             Debug.Log("CurrentHealth: " + health);
         }
-    }
+
+            if (healthBar != null)
+            {
+                healthBar.UpdateHealthDisplay(health, maxHealth);
+            }
+        }
 }
 
    

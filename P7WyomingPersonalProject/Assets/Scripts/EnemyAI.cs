@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     private GameObject player;
     public PlayerHealthDamage playerHealthDamage;
     public float damage=10;
+    public float cooldown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldown += Time.deltaTime;
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed);
         if (transform.position.y < -2)
@@ -27,11 +30,12 @@ public class EnemyAI : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && cooldown >= 1)
         {
             PlayerHealthDamage phd = collision.gameObject.GetComponent<PlayerHealthDamage> ();
             phd.health -= damage;
             Debug.Log("CurrentHealth: " + phd.health);
+            cooldown = 0;
         }
     }
 }

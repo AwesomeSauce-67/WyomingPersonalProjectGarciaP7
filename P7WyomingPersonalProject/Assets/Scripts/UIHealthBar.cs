@@ -4,12 +4,17 @@ using TMPro;
 
 public class UIHealthBar : MonoBehaviour
 {
-    private Image fillImage;
-    private TextMeshProUGUI healthText;
+    public Image fillImage;
+    public TextMeshProUGUI healthText;
+
+    public PlayerHealthDamage pHD;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if(pHD != null)
+        {
+            UpdateHealthDisplay(pHD.health, pHD.maxHealth);
+        }
     }
 
     // Update is called once per frame
@@ -26,6 +31,6 @@ public class UIHealthBar : MonoBehaviour
 
         fillImage.fillAmount = Mathf.Clamp01(fillPercentage);
 
-        healthText.text = $"{Mathf.Max(0, currentHealth)} / {maxHealth}";
+        healthText.text = $"Health: {Mathf.Max(0, currentHealth)}";
     }
 }
